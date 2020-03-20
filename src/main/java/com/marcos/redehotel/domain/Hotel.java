@@ -24,7 +24,7 @@ public class Hotel implements Serializable {
 	public Hotel() {
 	}
 
-	public Hotel(int id, String name, double rating, Date availability, String state) {
+	public Hotel(Integer id, String name, double rating, Date availability, String state) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -33,11 +33,11 @@ public class Hotel implements Serializable {
 		this.state = state;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
