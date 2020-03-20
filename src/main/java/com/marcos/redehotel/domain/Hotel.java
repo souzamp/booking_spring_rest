@@ -3,10 +3,19 @@ package com.marcos.redehotel.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Hotel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
 	private String name;
 	private double rating;
 	private Date availability;
