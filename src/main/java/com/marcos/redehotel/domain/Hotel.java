@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Hotel implements Serializable {
@@ -15,11 +17,15 @@ public class Hotel implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String name;
 	private double rating;
 	private Date availability;
 	private String state;
+
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
 
 	public Hotel() {
 	}
@@ -71,6 +77,14 @@ public class Hotel implements Serializable {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	@Override
